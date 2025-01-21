@@ -1,0 +1,13 @@
+group: tmcl
+group_alias: TMCL
+task:
+  - group: tmcl_short_questions
+    group_alias: Short questions
+    task:
+      - tmlu_short_questions_tasks
+    aggregate_metric_list:
+      - metric: acc
+aggregate_metric_list:
+  - metric: acc
+metadata:
+  version: 1

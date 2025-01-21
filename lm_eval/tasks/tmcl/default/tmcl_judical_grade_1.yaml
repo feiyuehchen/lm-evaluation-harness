@@ -1,0 +1,19 @@
+"dataset_name": "judical_grade_1"
+"description": "以下為臺灣司法特考的單選題，請提供正確答案的選項。\n\n"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+- "D"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\n\
+  D. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{%\
+  \ endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{%\
+  \ endif %}\nAnswer:"
+"tag": "tmlu_short_questions_tasks"
+"include": "_default_template_yaml"
+"task": "twcl_judical_grade_1"
+"task_alias": "judical grade 1"
+
+
+
+

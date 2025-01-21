@@ -19,12 +19,12 @@ task:
       - tmlu_humanities_tasks
     aggregate_metric_list:
       - metric: acc
-  - group: tmlu_taiwan_specific
-    group_alias: Taiwan Specific
-    task:
-      - tmlu_taiwan_specific_tasks
-    aggregate_metric_list:
-      - metric: acc
+  # - group: tmlu_taiwan_specific
+  #   group_alias: Taiwan Specific
+  #   task:
+  #     - tmlu_taiwan_specific_tasks
+  #   aggregate_metric_list:
+  #     - metric: acc
   - group: tmlu_other
     group_alias: Other
     task:
