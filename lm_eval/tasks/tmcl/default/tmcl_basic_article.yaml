@@ -1,0 +1,19 @@
+"dataset_name": "basic_article"
+"description": "請以中華民國刑法為基礎，回答下列問題。注意選項中的條號需與內容相同，若法條條號與內容不符也為錯誤答案。"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+- "D"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\n\
+  D. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{%\
+  \ endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{%\
+  \ endif %}\nAnswer:"
+"tag": "tmcl_examination_for_judicial_personnel"
+"include": "_default_template_yaml"
+"task": "tmcl_basic_article"
+"task_alias": "basic article"
+
+
+
+

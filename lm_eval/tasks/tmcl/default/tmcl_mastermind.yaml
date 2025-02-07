@@ -1,0 +1,18 @@
+"dataset_name": "mastermind"
+"description": "請從法學理論和中華民國刑法的角度回答下列涉及組織犯罪相關案件的問題。"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nAnswer:"
+"tag": "tmcl_longcontext_boolq"
+"include": "_default_template_yaml"
+"task": "tmcl_mastermind"
+"task_alias": "mastermind"
+
+
+
+
+
+
+

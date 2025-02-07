@@ -1,0 +1,15 @@
+"dataset_name": "lineal_relative"
+"description": "請根據某刑事家庭案件的判決書內容，回答以下問題。"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nAnswer:"
+"tag": "tmcl_longcontext_boolq"
+"include": "_default_template_yaml"
+"task": "tmcl_lineal_relative"
+"task_alias": "lineal relative"
+
+
+
+

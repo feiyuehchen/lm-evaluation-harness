@@ -1,13 +1,36 @@
 group: tmcl
 group_alias: TMCL
 task:
-  - group: tmcl_short_questions
-    group_alias: Short questions
+  - group: tmcl_examination_for_judicial_personnel
+    group_alias: Examination for Judicial Personnel
     task:
-      - tmlu_short_questions_tasks
+      - tmcl_basic_article
+      - tmcl_bar_judge_examination
+      - tmcl_judical_grade_4
+      - tmcl_judical_grade_5
     aggregate_metric_list:
       - metric: acc
-aggregate_metric_list:
-  - metric: acc
+  - group: tmcl_longcontext_boolq
+    group_alias: Longcontext BoolQ
+    task:
+      - tmcl_convicted
+      - tmcl_lineal_relative 
+      - tmcl_plan
+      - tmcl_evidence_debate
+      - tmcl_cruel_mean
+      - tmcl_public_safety
+      - tmcl_mastermind
+    aggregate_metric_list:
+      - metric: acc
+  - group: tmcl_feature_extraction
+    group_alias: Feature Extraction
+    task:
+      - tmcl_public_authority
+      - tmcl_weapon
+      - tmcl_punishment_category
+      - tmcl_term_imprisonment
+      - tmcl_fine
+    aggregate_metric_list:
+      - metric: acc
 metadata:
   version: 1

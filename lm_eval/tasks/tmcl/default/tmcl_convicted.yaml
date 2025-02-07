@@ -1,0 +1,15 @@
+"dataset_name": "convicted"
+"description": "以下的刑法判決書有多名被告，請判斷以下某特定被告是否有罪。\n"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nAnswer:"
+"tag": "tmcl_longcontext_boolq"
+"include": "_default_template_yaml"
+"task": "tmcl_convicted"
+"task_alias": "convicted"
+
+
+
+

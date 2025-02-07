@@ -11,55 +11,33 @@ from tqdm import tqdm
 
 
 categories = {
-    "short_questions": "judical_grade_1"
+    "examination_for_judicial_personnel": ["basic_article", "bar_judge_examination", "judical_grade_4", "judical_grade_5"],
+    "longcontext_boolq": ["convicted", "lineal_relative", "plan", "evidence_debate", "cruel_mean", "public_safety", "mastermind"],
+    "feature_extraction": ["public_authority", "weapon", "punishment_category", "term_imprisonment", "fine"]
 }
 
 task_list = [
-    "judical grade 1"
+    "basic article",
+    "bar judge examination",
+    "judical grade 4",
+    "judical grade 5",
+    "public authority",
+    "weapon",
+    "punishment category",
+    "term imprisonment",
+    "fine",
+    "convicted",
+    "lineal relative",
+    "plan",
+    "evidence debate",
+    "cruel mean",
+    "public safety",
+    "mastermind"
 ]
 
-# task_list = [
-#     "AST civics",
-#     "AST geography",
-#     "CAP civics",
-#     "CAP geography",
-#     "GSAT civics",
-#     "GSAT geography",
-#     "MOEX Accountant",
-#     "MOEX Clinical psychologist",
-#     "AST biology",
-#     "AST chemistry",
-#     "AST mathematics",
-#     "AST physics",
-#     "CAP biology",
-#     "CAP chemistry",
-#     "CAP earth science",
-#     "CAP mathematics",
-#     "CAP physics",
-#     "GSAT biology",
-#     "GSAT chemistry",
-#     "GSAT earth science",
-#     "GSAT mathematics",
-#     "GSAT physics",
-#     "AST Chinese",
-#     "AST history",
-#     "CAP Chinese",
-#     "CAP history",
-#     "GSAT Chinese",
-#     "GSAT history",
-#     "MOEX Tour guide",
-#     "MOEX Tour leader",
-#     "MOEX Lawyer qualification",
-#     "HB Driving Rule",
-#     "MOEX Teacher qualification",
-#     "MOEX Taiwan tourist resources",
-#     "MOEX Basic Traditional Chinese Medicine",
-#     "MOEX Clinical Traditional Chinese Medicine",
-#     "MOEX Nutritionist",
-# ]
 subject2name = {}
 subject2num_choice = {}
-# subject2category = {}
+subject2category = {}
 SUBJECTS = {}
 
 
@@ -119,7 +97,9 @@ if __name__ == "__main__":
 
         num_choies = subject2num_choice[subject]
         # basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}"
-        basic_doc_to_choice = ["A", "B", "C", "D"]
+        basic_doc_to_choice = ["A", "B", "C"]
+        if num_choies == 4:
+            basic_doc_to_choice.append("D")
         if num_choies == 5:
             # basic_doc_to_text += "\nE. {{choices[4]}}"
             basic_doc_to_choice.append("E")
@@ -128,7 +108,7 @@ if __name__ == "__main__":
             basic_doc_to_choice += ["E", "F"]
         # basic_doc_to_text += "\nAnswer:"
         # basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}{% if choices[4] %}\nE. {{choices[4]}}{% endif %}{% if choices[5] %}\nF. {{choices[5]}}{% endif %}\nAnswer:"
-        basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{% endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{% endif %}\nAnswer:"
+        basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{% endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{% endif %}\nAnswer:"
 
         yaml_dict = {
             "include": base_yaml_name,
