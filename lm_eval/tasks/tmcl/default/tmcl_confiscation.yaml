@@ -1,5 +1,5 @@
-"dataset_name": "basic_article"
-"description": "請以中華民國刑法為基礎，回答下列問題。注意選項中的條號需與內容相同，若法條條號與內容不符也為錯誤答案。"
+"dataset_name": "confiscation"
+"description": "請從法學理論和中華民國刑法的角度回答與以下某特定被告相關的問題。"
 "doc_to_choice":
 - "A"
 - "B"
@@ -9,10 +9,13 @@
   D. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{%\
   \ endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{%\
   \ endif %}\nAnswer:"
-"tag": "tmcl_examination_for_judicial_personnel"
+"tag": "tmcl_feature_extraction"
 "include": "_default_template_yaml"
-"task": "tmcl_basic_article"
-"task_alias": "basic article"
+"task": "tmcl_confiscation"
+"task_alias": "confiscation"
+
+
+
 
 
 

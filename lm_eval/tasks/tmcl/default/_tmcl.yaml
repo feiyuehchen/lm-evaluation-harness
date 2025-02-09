@@ -4,7 +4,7 @@ task:
   - group: tmcl_examination_for_judicial_personnel
     group_alias: Examination for Judicial Personnel
     task:
-      - tmcl_basic_article
+      # - tmcl_basic_article
       - tmcl_bar_judge_examination
       - tmcl_judical_grade_4
       - tmcl_judical_grade_5
@@ -30,6 +30,8 @@ task:
       - tmcl_punishment_category
       - tmcl_term_imprisonment
       - tmcl_fine
+      - tmcl_confiscation
+      - tmcl_crime_name
     aggregate_metric_list:
       - metric: acc
 metadata:

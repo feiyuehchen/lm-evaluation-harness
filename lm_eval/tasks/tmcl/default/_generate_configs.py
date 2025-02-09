@@ -11,13 +11,13 @@ from tqdm import tqdm
 
 
 categories = {
-    "examination_for_judicial_personnel": ["basic_article", "bar_judge_examination", "judical_grade_4", "judical_grade_5"],
+    "examination_for_judicial_personnel": ["bar_judge_examination", "judical_grade_4", "judical_grade_5"],
     "longcontext_boolq": ["convicted", "lineal_relative", "plan", "evidence_debate", "cruel_mean", "public_safety", "mastermind"],
-    "feature_extraction": ["public_authority", "weapon", "punishment_category", "term_imprisonment", "fine"]
+    "feature_extraction": ["public_authority", "weapon", "punishment_category", "term_imprisonment", "fine", "confiscation", "crime_name"]
 }
 
 task_list = [
-    "basic article",
+    # "basic article",
     "bar judge examination",
     "judical grade 4",
     "judical grade 5",
@@ -32,7 +32,9 @@ task_list = [
     "evidence debate",
     "cruel mean",
     "public safety",
-    "mastermind"
+    "mastermind",
+    "confiscation", 
+    "crime_name"
 ]
 
 subject2name = {}
