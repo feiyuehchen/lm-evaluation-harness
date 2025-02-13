@@ -11,16 +11,36 @@ from tqdm import tqdm
 
 
 categories = {
-    "examination_for_judicial_personnel": ["bar_judge_examination", "judical_grade_4", "judical_grade_5"],
-    "longcontext_boolq": ["convicted", "lineal_relative", "plan", "evidence_debate", "cruel_mean", "public_safety", "mastermind"],
-    "feature_extraction": ["public_authority", "weapon", "punishment_category", "term_imprisonment", "fine", "confiscation", "crime_name"]
+    "examination_for_judicial_personnel": [
+        "bar_judge_examination", 
+        "judicial_grade_4", 
+        "judicial_grade_5"
+    ],
+    "basic_features_from_judgments": [
+        "punishment_category", 
+        "term_imprisonment", 
+        "fine", 
+        "convicted", 
+        "confiscation", 
+        "crime_name"
+    ],
+    "conceptual_features_from_judgments": [
+        "public_safety", 
+        "public_authority", 
+        "mastermind", 
+        "evidence_debate", 
+        "lineal_relative", 
+        "weapon", 
+        "cruel_mean", 
+        "plan"
+    ]
 }
 
 task_list = [
     # "basic article",
     "bar judge examination",
-    "judical grade 4",
-    "judical grade 5",
+    "judicial grade 4",
+    "judicial grade 5",
     "public authority",
     "weapon",
     "punishment category",
@@ -110,8 +130,9 @@ if __name__ == "__main__":
             basic_doc_to_choice += ["E", "F"]
         # basic_doc_to_text += "\nAnswer:"
         # basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nD. {{choices[3]}}{% if choices[4] %}\nE. {{choices[4]}}{% endif %}{% if choices[5] %}\nF. {{choices[5]}}{% endif %}\nAnswer:"
-        basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{% endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{% endif %}\nAnswer:"
-
+        # generate_until_text = "請輸出最佳答案的選項字母。"
+        basic_doc_to_text = "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}\n{{data}}\nAnswer:"
+        
         yaml_dict = {
             "include": base_yaml_name,
             "group": f"tmcl_{args.task_prefix}_{category}"

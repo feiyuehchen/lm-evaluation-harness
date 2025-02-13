@@ -1,14 +1,11 @@
 "dataset_name": "bar_judge_examination"
-"description": "以下為中華民國公務人員特種考試司法官考試、專門職業及技術人員高等考試律師考試的第一試試題(三等)，科目為綜合法學（一）（刑法、刑事訴訟法、法律倫理），請提供正確答案的選項。\n\n"
+"description": "以下為臺灣公務人員特種考試司法官考試、專門職業及技術人員高等考試律師考試的第一試試題(三等)，科目為綜合法學（一）（刑法、刑事訴訟法、法律倫理），類型為單選題。請提供正確答案的選項。"
 "doc_to_choice":
 - "A"
 - "B"
 - "C"
 - "D"
-"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\n\
-  D. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{%\
-  \ endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{%\
-  \ endif %}\nAnswer:"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if data|length > 0 %}\n{{data}}{% endif %}\nAnswer:"
 "tag": "tmcl_examination_for_judicial_personnel"
 "include": "_default_template_yaml"
 "task": "tmcl_bar_judge_examination"

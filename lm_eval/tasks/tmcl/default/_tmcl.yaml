@@ -6,32 +6,32 @@ task:
     task:
       # - tmcl_basic_article
       - tmcl_bar_judge_examination
-      - tmcl_judical_grade_4
-      - tmcl_judical_grade_5
+      - tmcl_judicial_grade_4
+      - tmcl_judicial_grade_5
     aggregate_metric_list:
       - metric: acc
-  - group: tmcl_longcontext_boolq
-    group_alias: Longcontext BoolQ
+  - group: tmcl_basic_features_from_judgments
+    group_alias: Basic Features From Judgments
     task:
-      - tmcl_convicted
-      - tmcl_lineal_relative 
-      - tmcl_plan
-      - tmcl_evidence_debate
-      - tmcl_cruel_mean
-      - tmcl_public_safety
-      - tmcl_mastermind
-    aggregate_metric_list:
-      - metric: acc
-  - group: tmcl_feature_extraction
-    group_alias: Feature Extraction
-    task:
-      - tmcl_public_authority
-      - tmcl_weapon
       - tmcl_punishment_category
       - tmcl_term_imprisonment
       - tmcl_fine
+      - tmcl_convicted
       - tmcl_confiscation
       - tmcl_crime_name
+    aggregate_metric_list:
+      - metric: acc
+  - group: tmcl_conceptual_features_from_judgments
+    group_alias: Conceptual Features From Judgments
+    task:
+      - tmcl_public_safety
+      - tmcl_public_authority
+      - tmcl_mastermind
+      - tmcl_evidence_debate
+      - tmcl_lineal_relative
+      - tmcl_weapon
+      - tmcl_cruel_mean
+      - tmcl_plan
     aggregate_metric_list:
       - metric: acc
 metadata:

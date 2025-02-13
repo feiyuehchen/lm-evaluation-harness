@@ -1,10 +1,10 @@
 "dataset_name": "cruel_mean"
-"description": "請從法學理論和中華民國刑法的角度回答下列與暴力犯罪案件相關的問題。"
+"description": "請根據以下暴力犯罪相關的判決書回答以下是非題，提供正確答案的選項。當該資料不足以判斷是非，即為無法判斷。"
 "doc_to_choice":
 - "A"
 - "B"
 - "C"
-"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\nAnswer:"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if data|length > 0 %}\n{{data}}{% endif %}\nAnswer:"
 "tag": "tmcl_longcontext_boolq"
 "include": "_default_template_yaml"
 "task": "tmcl_cruel_mean"

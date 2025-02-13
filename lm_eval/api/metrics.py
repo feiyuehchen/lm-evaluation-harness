@@ -23,6 +23,7 @@ def bypass_agg(arr):
 
 @register_aggregation("mean")
 def mean(arr):
+    # print(f"arr: {arr}")
     return sum(arr) / len(arr)
 
 

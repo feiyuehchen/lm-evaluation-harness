@@ -1,15 +1,12 @@
 "dataset_name": "fine"
-"description": "請從法學理論和中華民國刑法的角度回答與以下某特定被告相關的問題。"
+"description": "請根據以下判決書回答與某特定被告相關的是非題，提供正確答案的選項。當該資料不足以判斷是非，即為無法判斷。"
 "doc_to_choice":
 - "A"
 - "B"
 - "C"
 - "D"
-"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}\n\
-  D. {{choices[3]}}{% if choices is defined and choices|length > 4 %}\nE. {{choices[4]}}{%\
-  \ endif %}{% if choices is defined and choices|length > 5 %}\nF. {{choices[5]}}{%\
-  \ endif %}\nAnswer:"
-"tag": "tmcl_feature_extraction"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if data|length > 0 %}\n{{data}}{% endif %}\nAnswer:"
+"tag": "tmcl_basic_features_from_judgments"
 "include": "_default_template_yaml"
 "task": "tmcl_fine"
 "task_alias": "fine"

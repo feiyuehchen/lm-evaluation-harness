@@ -1,0 +1,16 @@
+"dataset_name": "judicial_grade_5"
+"description": "以下為臺灣司法人員五等考試試題，科目為刑事法訴訟大意，類型為單選題。請提供正確答案的選項。"
+"doc_to_choice":
+- "A"
+- "B"
+- "C"
+- "D"
+"doc_to_text": "{{question.strip()}}\nA. {{choices[0]}}\nB. {{choices[1]}}\nC. {{choices[2]}}{% if choices is defined and choices|length > 3 %}\nD. {{choices[3]}}{% endif %}{% if data|length > 0 %}\n{{data}}{% endif %}\nAnswer:"
+"tag": "tmcl_examination_for_judicial_personnel"
+"include": "_default_template_yaml"
+"task": "tmcl_judicial_grade_5"
+"task_alias": "judicial grade 5"
+
+
+
+

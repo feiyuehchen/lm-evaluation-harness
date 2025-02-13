@@ -1548,7 +1548,10 @@ class ConfigurableTask(Task):
                 # If you set doc_to_choice,
                 # it assumes that doc_to_target returns a number.
                 choices = self.doc_to_choice(doc)
-                gold = choices[gold]
+                if isinstance(gold, int):
+                    gold = choices[gold]
+                else:
+                    gold = [gold]
             # we expect multiple_targets to be a list.
             elif self.multiple_target:
                 gold = list(gold)
