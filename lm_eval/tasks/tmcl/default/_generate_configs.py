@@ -11,19 +11,6 @@ from tqdm import tqdm
 
 
 categories = {
-    "examination_for_judicial_personnel": [
-        "bar_judge_examination", 
-        "judicial_grade_4", 
-        "judicial_grade_5"
-    ],
-    "basic_features_from_judgments": [
-        "punishment_category", 
-        "term_imprisonment", 
-        "fine", 
-        "convicted", 
-        "confiscation", 
-        "crime_name"
-    ],
     "conceptual_features_from_judgments": [
         "public_safety", 
         "public_authority", 
@@ -33,7 +20,12 @@ categories = {
         "weapon", 
         "cruel_mean", 
         "plan"
-    ]
+    ],
+        "examination_for_judicial_personnel": [
+        "bar_judge_examination", 
+        "judicial_grade_4", 
+        "judicial_grade_5"
+    ],
 }
 
 task_list = [
@@ -43,18 +35,12 @@ task_list = [
     "judicial grade 5",
     "public authority",
     "weapon",
-    "punishment category",
-    "term imprisonment",
-    "fine",
-    "convicted",
     "lineal relative",
     "plan",
     "evidence debate",
     "cruel mean",
     "public safety",
     "mastermind",
-    "confiscation", 
-    "crime_name"
 ]
 
 subject2name = {}

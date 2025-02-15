@@ -10,17 +10,6 @@ task:
       - tmcl_judicial_grade_5
     aggregate_metric_list:
       - metric: acc
-  - group: tmcl_basic_features_from_judgments
-    group_alias: Basic Features From Judgments
-    task:
-      - tmcl_punishment_category
-      - tmcl_term_imprisonment
-      - tmcl_fine
-      - tmcl_convicted
-      - tmcl_confiscation
-      - tmcl_crime_name
-    aggregate_metric_list:
-      - metric: acc
   - group: tmcl_conceptual_features_from_judgments
     group_alias: Conceptual Features From Judgments
     task:
